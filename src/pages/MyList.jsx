@@ -10,46 +10,46 @@ const MyList = () => {
   return (
     <div className="dark:bg-gray-dark-library parallax pt-10 text-gray-900 dark:text-gray-200 text-center">
       {myList.length ? (
-        <div class="relative overflow-x-auto sm:rounded-lg">
-          <table class="shadow-[0_0_15px_1px_black] dark:shadow-[0_0_10px_1px_gray] m-auto text-sm text-left rtl:text-right text-gray-500 dark:text-gray-900">
-            <thead class="text-xs text-white uppercase bg-gray-700 dark:bg-gray-50 dark:text-black">
+        <div className="relative overflow-x-auto sm:rounded-lg">
+          <table className="shadow-[0_0_15px_1px_black] dark:shadow-[0_0_10px_1px_gray] m-auto text-sm text-left rtl:text-right text-gray-500 dark:text-gray-900">
+            <thead className="text-xs text-white uppercase bg-gray-700 dark:bg-gray-50 dark:text-black">
               <tr>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                   Book
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                   Author
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                   Publisher
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                   Delete
                 </th>
               </tr>
             </thead>
             {myList.map((book) => (
-              <tbody>
-                <tr class="bg-gray-900 text-gray-100 border-b dark:bg-gray-400 dark:border-gray-700 dark:text-gray-950 hover:bg-gray-600 dark:hover:bg-gray-300">
+              <tbody key={book.id}>
+                <tr className="bg-gray-900 text-gray-100 border-b dark:bg-gray-400 dark:border-gray-700 dark:text-gray-950 hover:bg-gray-600 dark:hover:bg-gray-300">
                   <th
                     scope="row"
-                    class="px-4 py-4 text-white whitespace-nowrap dark:text-black font-semibold"
+                    className="px-4 py-4 text-white whitespace-nowrap dark:text-black font-semibold"
                   >
                     {book.volumeInfo?.title
                       ? book.volumeInfo.title
                       : "İsimsiz Kitap"}
                   </th>
-                  <td class="px-6 py-4">
+                  <td className="px-6 py-4">
                     {book.volumeInfo?.authors?.length
                       ? book.volumeInfo.authors[0]
                       : "Anonim Eser"}
                   </td>
-                  <td class="px-6 py-4">
+                  <td className="px-6 py-4">
                     {book.volumeInfo?.publishedDate
                       ? book.volumeInfo.publishedDate.substring(0, 4)
                       : "Bilinmiyor"}
                   </td>
-                  <td class="px-6 py-4 text-right">
+                  <td className="px-6 py-4 text-right">
                     <MdDelete
                       className="m-auto cursor-pointer dark:text-gray-900"
                       onClick={() => handleDelete(book)}
