@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
+@layer base {
+  input {
+    @apply block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-[3px] border-gray-900 focus:border-gray-500 appearance-none dark:text-white dark:border-gray-100 dark:focus:border-gray-500 focus:outline-none focus:ring-0;
+  }
+  label {
+    @apply peer-focus:font-medium absolute text-sm text-gray-900 dark:text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-gray-500 peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6;
+  }
+}
+
+@layer components {
+  .btn-danger {
+    @apply focus:outline-none text-white bg-gray-900 hover:bg-gray-100 hover:text-gray-900 focus:ring-4 focus:ring-gray-500 font-medium rounded-lg text-lg px-5 py-2.5 mr-2 mb-2 w-[300px] mt-[15px] dark:text-black dark:bg-gray-300 dark:hover:bg-gray-dark-second dark:hover:text-white dark:focus:ring-gray-dark-second;
+  }
+
+  .form-container {
+    @apply mt-[10vh] mx-auto overflow-hidden relative rounded-[8px] bg-gray-100 dark:bg-gray-900 before:content-[""] before:absolute before:w-[380px] before:h-[420px] before:top-[-50%] before:left-[-50%] after:content-[""] after:absolute after:w-[380px] after:h-[420px] after:top-[-50%] after:left-[-50%];
+  }
+  .form-container form {
+    @apply absolute inset-[2px] rounded-[8px] bg-gray-100 dark:bg-gray-dark-second z-[10] flex flex-col py-[50px] px-[40px];
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+*::-webkit-scrollbar {
+  overflow: hidden;
+}
+
+body {
+  font-family: "Poppins", "sans-serif";
+  margin: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0px 0px #28292d inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+.btn-danger:hover .light-icon {
+  color: black;
+}
+
+.btn-danger:hover .dark-icon {
+  color: white;
+}
+
+.parallax {
+  flex-grow: 1;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.book-card {
+  margin: 1rem;
+  width: 300px;
+  height: 500;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-card img {
+  height: 250px;
+  width: 70%;
+}
+
+.book-details {
+  min-width: 350px;
+  margin: 1rem auto;
+  height: fit-content;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-details img {
+  max-width: 300px;
+  width: 80%;
+  height: 300px;
+}
+
+@media screen and (max-width: 950px) {
+  .kitaplikImage {
+    width: 400px !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .kitaplikImage {
+    width: 200px !important;
+  }
+}
