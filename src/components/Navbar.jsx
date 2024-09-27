@@ -11,6 +11,7 @@ import { Link, useNavigate } from "react-router-dom";
 import SwitchButton from "./SwitchButton";
 import avatar from "../assets/icons/avatar.png";
 import { useAuthContext } from "../context/AuthProvider";
+import { useMyListContext } from "../context/MyListProvider";
 
 const navigation = [
   { name: "Dashboard", href: "#", current: true },
@@ -21,6 +22,7 @@ const navigation = [
 
 export default function Navbar() {
   const { logOut, currentUser } = useAuthContext();
+  const {myList} = useMyListContext();
   const navigate = useNavigate();
 
   return (
@@ -32,7 +34,7 @@ export default function Navbar() {
         <div className="mx-auto px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
             <Link className="pr-2 text-2xl font-semibold" to="/">
-            Colorful Library
+              Colorful Library
             </Link>
 
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -77,30 +79,27 @@ export default function Navbar() {
                         </Link>
                       </MenuItem>
                     </>
-                  ) :
-                  <>
-                  
-                    <MenuItem>
-                      <span
-                        onClick={() => navigate("/myList")}
-                        className="text-white data-[focus]:bg-white data-[focus]:text-gray-900 block px-4 py-2 text-sm dark:text-black dark:data-[focus]:bg-gray-dark-main dark:data-[focus]:text-white cursor-pointer"
-                      >
-                        My Library
-                      </span>
-                    </MenuItem>
-                    <MenuItem>
-                      <span
-                        onClick={logOut}
-                        className="text-white data-[focus]:bg-white data-[focus]:text-gray-900 block px-4 py-2 text-sm dark:text-black dark:data-[focus]:bg-gray-dark-main dark:data-[focus]:text-white cursor-pointer"
-                      >
-                        Log out
-                      </span>
-                      
-                      
-                    </MenuItem>
-                  
-                  </>
-                  }
+                  ) : (
+                    <>
+                      <MenuItem>
+                        <span
+                          onClick={() => navigate("/myList")}
+                          className="text-white data-[focus]:bg-white data-[focus]:text-gray-900 block px-4 py-2 text-sm dark:text-black dark:data-[focus]:bg-gray-dark-main dark:data-[focus]:text-white cursor-pointer relative"
+                        >
+                          My Library
+                          <span className="absolute top-0 start-24">{myList.length}</span>
+                        </span>
+                      </MenuItem>
+                      <MenuItem>
+                        <span
+                          onClick={logOut}
+                          className="text-white data-[focus]:bg-white data-[focus]:text-gray-900 block px-4 py-2 text-sm dark:text-black dark:data-[focus]:bg-gray-dark-main dark:data-[focus]:text-white cursor-pointer"
+                        >
+                          Log out
+                        </span>
+                      </MenuItem>
+                    </>
+                  )}
                 </MenuItems>
               </Menu>
             </div>

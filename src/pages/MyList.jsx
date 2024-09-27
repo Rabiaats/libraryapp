@@ -65,6 +65,7 @@ const MyList = () => {
           <img
             width="400px"
             src={listeBos}
+            loading="lazy"
             alt=""
             className="m-auto mb-3 kitaplikImage"
           />
