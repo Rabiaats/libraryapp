@@ -108,8 +108,34 @@ input:-webkit-autofill:focus input:-webkit-autofill {
   }
 }
 
+@media screen and (max-width: 640px) {
+  .footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer ul{
+    margin-bottom: 0;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .kitaplikImage {
     width: 200px !important;
+  }
+  .book-details{
+    width: 90%;
+  }
+
+  .book-details img{
+    width: 90%;
+  }
+
+  .book-details td{
+    padding: 0;
+  }
+  .parallax {
+    padding: 0;
+    padding-top: 5rem;
   }
 }

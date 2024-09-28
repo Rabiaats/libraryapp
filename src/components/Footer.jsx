@@ -28,7 +28,7 @@ const Footer = () => {
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-5">
         <hr className="my-2 border-gray-700 sm:mx-auto dark:border-gray-300 lg:my-8" />
 
-        <div className="sm:flex sm:items-center sm:justify-between">
+        <div className="footer sm:flex sm:items-center sm:justify-between">
           <Link
             to="/"
             className="flex items-center mb-1 sm:mb-0 space-x-3 rtl:space-x-reverse"

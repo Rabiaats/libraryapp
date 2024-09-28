@@ -26,7 +26,8 @@ export const useAuthContext = () => {
 };
 
 const AuthProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
 
@@ -76,8 +77,9 @@ const AuthProvider = ({ children }) => {
         const { email, displayName, photoURL } = user;
         setCurrentUser({ email, displayName, photoURL });
       } else {
-        setCurrentUser(false);
+        setCurrentUser(null);
       }
+      setLoading(false);
     });
   };
 
@@ -110,6 +112,7 @@ const AuthProvider = ({ children }) => {
     logOut,
     googleProvider,
     forgotPassword,
+    loading
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;

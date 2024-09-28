@@ -15,6 +15,7 @@ const BookDetails = () => {
   const [loading, setLoading] = useState(false);
   const { handleAdd } = useMyListContext();
 
+  console.log(book)
   useEffect(() => {
     setLoading(true);
     if (bookID) {
@@ -28,8 +29,8 @@ const BookDetails = () => {
 
   return (
     <div className="flex justify-center p-10 dark:bg-gray-dark-main parallax flex-col align-items-center">
-      {loading ? (
-        <Loading />
+      {loading || !book.volumeInfo ? (
+        <div className="dark:bg-gray-dark-main parallax flex justify-center"><Loading/></div>
       ) : (
         <div className="book-details shadow-[0_0_10px_0.5px_gray] bg-gray-100 dark:bg-gray-dark-main dark:shadow-[0_0_10px_0.5px_lightgray] rounded-lg">
           <img
