@@ -22,4 +22,4 @@
 - **Firebase :** Login ve Register işlemleri.
 - **React Toastify :** Kullanıcılara işlem yaptıklarında bildirim vermek.
 
-### [Sayfasın Canlı Link][https://my-library-project.vercel.app/]
+### [Canlı Link](https://my-library-project.vercel.app/)
