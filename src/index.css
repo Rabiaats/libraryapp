@@ -119,6 +119,14 @@ input:-webkit-autofill:focus input:-webkit-autofill {
   }
 }
 
+@media screen and (max-width: 590px) {
+  .my-list th{
+    padding-left: 10px !important;
+    padding-right: 0 !important;
+    white-space: wrap;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .kitaplikImage {
     width: 200px !important;
@@ -140,6 +148,17 @@ input:-webkit-autofill:focus input:-webkit-autofill {
   }
 }
 
-.my-list{
-  
+@media screen and (max-width: 400px) {
+  .navbar{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  .user{
+    position: relative;
+  }
 }

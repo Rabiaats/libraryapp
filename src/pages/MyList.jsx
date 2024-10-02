@@ -10,7 +10,7 @@ const MyList = () => {
   return (
     <div className="dark:bg-gray-dark-library parallax pt-10 text-gray-900 dark:text-gray-200 text-center">
       {myList.length ? (
-        <div className="relative overflow-x-auto sm:rounded-lg">
+        <div className="relative overflow-x-auto sm:rounded-lg ">
           <table className="my-list shadow-[0_0_15px_1px_black] dark:shadow-[0_0_10px_1px_gray] m-auto text-sm text-left rtl:text-right text-gray-500 dark:text-gray-900">
             <thead className="text-xs text-white uppercase bg-gray-700 dark:bg-gray-50 dark:text-black">
               <tr>

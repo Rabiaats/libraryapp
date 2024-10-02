@@ -13,13 +13,6 @@ import avatar from "../assets/icons/avatar.png";
 import { useAuthContext } from "../context/AuthProvider";
 import { useMyListContext } from "../context/MyListProvider";
 
-const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
-];
-
 export default function Navbar() {
   const { logOut, currentUser } = useAuthContext();
   const {myList} = useMyListContext();
@@ -32,17 +25,16 @@ export default function Navbar() {
         className="text-gary-900 bg-neutral-100 dark:bg-gray-900 dark:text-white sticky top-0 w-full z-20"
       >
         <div className="mx-auto px-2 sm:px-6 lg:px-8">
-          <div className="relative flex h-16 items-center justify-between">
+          <div className="navbar relative flex h-16 items-center justify-between">
             <Link className="pr-2 text-2xl font-semibold" to="/">
               Colorful Library
             </Link>
 
-            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <div className="user absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               {currentUser && (
                 <h5 className="mr-2 capitalize">{currentUser?.displayName}</h5>
               )}
               <SwitchButton />
-              {/* Profile dropdown */}
               <Menu as="div" className="relative">
                 <div>
                   <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -105,21 +97,6 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-
-        <DisclosurePanel className="sm:hidden">
-          <div className="space-y-1 px-2 pb-3 pt-2">
-            {navigation.map((item) => (
-              <DisclosureButton
-                key={item.name}
-                as="a"
-                href={item.href}
-                aria-current={item.current ? "page" : undefined}
-              >
-                {item.name}
-              </DisclosureButton>
-            ))}
-          </div>
-        </DisclosurePanel>
       </Disclosure>
     </>
   );
