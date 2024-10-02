@@ -41,7 +41,7 @@ const Footer = () => {
               Library
             </span>
           </Link>
-          <ul className="text-red-main flex flex-wrap items-center mb-6 text-sm font-medium dark:text-gray-400 sm:mb-0">
+          <ul className="text-red-main flex flex-wrap items-center mb-6 text-sm font-medium dark:text-gray-400 sm:mb-0 justify-center">
             {navigation.map((item) => (
               <li className="font-medium flex justify-center" key={item.title}>
                 <NavLink
