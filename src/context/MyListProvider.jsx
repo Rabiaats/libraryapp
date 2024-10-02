@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { toastWarnNotify } from "../helpers/ToastNotify";
+import { toastSuccessNotify, toastWarnNotify } from "../helpers/ToastNotify";
 
 const MyListContext = createContext();
 
@@ -15,6 +15,7 @@ const MyListProvider = ({ children }) => {
     if (!myList.some((book) => book.id === addBook.id)) {
       setMyList([...myList, addBook]);
       localStorage.setItem("myList", JSON.stringify([...myList, addBook]));
+      toastSuccessNotify(`Kitap kütüphanenize eklenmiştir`)
     } else {
       toastWarnNotify("Bu kitap kütüphanenizde var!");
     }

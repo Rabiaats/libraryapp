@@ -20,7 +20,6 @@ const BookProvider = ({ children }) => {
   const [search, setSearch] = useState("harry potter");
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
-  // const [author, setAuthor] = useState("keyes")
 
   useEffect(() => {
     const getBook = async () => {
@@ -37,7 +36,11 @@ const BookProvider = ({ children }) => {
       }
     };
 
-    getBook();
+    if(search){
+      getBook()
+    }else{
+      setSearch("harry potter");
+    }
   }, [search]);
 
   const values = { books, loading, setSearch };
