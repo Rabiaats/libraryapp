@@ -7,7 +7,7 @@ const BookCard = ({ book }) => {
 
   return (
     <div
-      className="book-card shadow-[0_0_10px_0.5px_gray] bg-gray-100 dark:bg-gray-dark-main dark:shadow-[0_0_10px_0.5px_lightgray] rounded-lg hover:scale-110"
+      className="book-card shadow-[0_0_10px_1px_gray] bg-gray-100 hover:scale-[95%] dark:bg-gray-dark-main dark:shadow-[0_0_10px_1px_lightgray] rounded-lg hover:shadow-[0_0_30px_3px_gray] hover:dark:shadow-[0_0_30px_3px_lightgray]"
       onClick={() => navigate(`/details/${book.id}`)}
     >
       <img
