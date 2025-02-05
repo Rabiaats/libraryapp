@@ -21,6 +21,6 @@
 - **Tailwind Css :** Stil ve tasarım.
 - **Firebase :** Login ve Register işlemleri.
 - **React Toastify :** Kullanıcılara işlem yaptıklarında bildirim vermek.
-- **Debounce: Kullanıcı arama yaparken veritabanına gecikmeli istek atılmaası için.
+- **Debounce :** Kullanıcı arama yaparken veritabanına gecikmeli istek atılmaası için.
 
 ### [Canlı Link](https://my-library-project.vercel.app/)
